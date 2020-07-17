@@ -7,6 +7,7 @@
 //
 
 import UIKit
+// DEMO_COMMENT_1
 import RealmSwift
 
 class ViewController: UIViewController {
@@ -88,7 +89,8 @@ class ViewController: UIViewController {
 
     func signIn() {
         setLoading(true);
-
+        
+        // DEMO_COMMENT_4
         app.login(withCredential: AppCredentials(username: usernameField.text!, password: passwordField.text!)) { [weak self](user, error) in
             // Completion handlers are not necessarily called on the UI thread.
             // This call to DispatchQueue.main.sync ensures that any changes to the UI,
@@ -112,6 +114,8 @@ class ViewController: UIViewController {
                     // Obtain List ID Value
                         //guard let partition_id = user?.customData?["list"]!!.stringValue! else {return}
                     guard let listdata = user?.customData?["list"], let partition_id = listdata?.stringValue! else {return}
+                    
+                    // DEMO_COMMENT_5
                     // Configure Realm User Object with Partition Value (List ID)
                     let projectRealm = try! Realm(configuration: user!.configuration(partitionValue: partition_id))
                     // Navigate to shopping list screen, passing the Realm

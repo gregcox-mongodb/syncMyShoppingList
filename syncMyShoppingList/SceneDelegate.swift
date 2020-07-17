@@ -7,10 +7,12 @@
 //
 
 import UIKit
+// DEMO_COMMENT_1
 import RealmSwift
 
 struct Constants {
     // Set this to your Realm App ID found in the Realm UI.
+    // DEMO_COMMENT_2
     static let REALM_APP_ID = "shoppinglist-bahas"
     
 }

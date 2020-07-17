@@ -7,6 +7,7 @@
 //
 
 import UIKit
+// DEMO_COMMENT_1
 import RealmSwift
 
 class setListViewController: UIViewController {
@@ -53,6 +54,7 @@ class setListViewController: UIViewController {
                         return
                    }
                 
+                // DEMO_COMMENT_5
                 // get current Realm User object
                 let user = app.currentUser()
                 // Configure Realm User Object with Partition Value (List ID)

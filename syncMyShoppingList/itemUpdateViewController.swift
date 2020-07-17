@@ -7,6 +7,7 @@
 //
 
 import UIKit
+// DEMO_COMMENT_1
 import RealmSwift
 
 class itemUpdateViewController: UIViewController {
@@ -29,6 +30,7 @@ class itemUpdateViewController: UIViewController {
     }
     
     @IBAction func updateClicked(_ sender: Any) {
+        // DEMO_COMMENT_6
         // update Item
         try! self.realm?.write {
             item?.name = itemField.text!

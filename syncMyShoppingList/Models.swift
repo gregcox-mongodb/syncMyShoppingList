@@ -7,6 +7,7 @@
 //
 
 import Foundation
+// DEMO_COMMENT_1
 import RealmSwift
 
 typealias ProjectId = String
@@ -17,6 +18,7 @@ enum ItemStatus: String {
   case Purchased
 }
 
+// DEMO_COMMENT_3
 class User: Object {
     @objc dynamic var _id: ObjectId = ObjectId.generate()
     @objc dynamic var _partition: String = ""
@@ -28,6 +30,7 @@ class User: Object {
     }
 }
 
+// DEMO_COMMENT_3
 class Item: Object {
     @objc dynamic var _id: ObjectId = ObjectId.generate()
     @objc dynamic var _partition: ProjectId = ""

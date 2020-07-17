@@ -7,6 +7,7 @@
 //
 
 import UIKit
+// DEMO_COMMENT_1
 import RealmSwift
 
 class shoppingListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
@@ -54,7 +55,9 @@ class shoppingListViewController: UIViewController, UITableViewDataSource, UITab
         // Access all items in the realm.
         // Only items with the "list" as the partition key value will be in the realm.
         items = realm?.objects(Item.self)
-
+        
+        // DEMO_COMMENT_7
+        // Watch for changes
         notificationToken = items?.observe { [weak self] (changes) in
             guard let tableView = self?.tableView else { return }
             switch changes {
@@ -112,6 +115,7 @@ class shoppingListViewController: UIViewController, UITableViewDataSource, UITab
                 }
             }
                         
+            // DEMO_COMMENT_6
             // Any writes to the Realm must occur in a write block.
             try! realm?.write {
                 // Add the Item to the Realm
@@ -129,7 +133,7 @@ class shoppingListViewController: UIViewController, UITableViewDataSource, UITab
         guard let item = items?[indexPath.row] else { return }
 
         // All modifications to a realm must happen in a write block.
-        //try! realm?.write {
+        // DEMO_COMMENT_6
         try! realm?.write {
             // Delete the Task.
             realm?.delete(item)
@@ -147,6 +151,7 @@ class shoppingListViewController: UIViewController, UITableViewDataSource, UITab
             // Add swipe right action to set status to "To Buy"
             let action = UIContextualAction(style: .normal, title:  " To Buy ", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
                     
+                    // DEMO_COMMENT_6
                     try! self.realm?.write {
                         item?.statusEnum = .ToBuy
                         item?.updated_by = self.user_name
@@ -166,6 +171,7 @@ class shoppingListViewController: UIViewController, UITableViewDataSource, UITab
             // Add swipe right action to set status to "Purchased"
             let action = UIContextualAction(style: .normal, title:  " Purchased ", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
                     
+                    // DEMO_COMMENT_6
                     try! self.realm?.write {
                         item?.statusEnum = .Purchased
                         item?.updated_by = self.user_name
@@ -184,6 +190,7 @@ class shoppingListViewController: UIViewController, UITableViewDataSource, UITab
             // Add swipe right action to set status to "No Stock"
             let action = UIContextualAction(style: .normal, title:  " No Stock ", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
                     
+                    // DEMO_COMMENT_6
                     try! self.realm?.write {
                         item?.statusEnum = .NoStock
                         item?.updated_by = self.user_name
@@ -312,6 +319,7 @@ class shoppingListViewController: UIViewController, UITableViewDataSource, UITab
         return items?.count ?? 0
     }
     
+    // DEMO_COMMENT_8
     //Logout
     @IBAction func logOut(_ sender: Any) {
         app.logOut(completion: { (error) in
