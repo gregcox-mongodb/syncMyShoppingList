@@ -11,6 +11,7 @@ Realm Demo App Install Guide:
 
 
 // Create and configure Realm app
+
 4. Create a new Atlas cluster (DB v4.4) - M10 is fine
 5. Create a new Realm App - can call it anything e.g. shoppingList
 6. Link Cluster created in step 4 and click Create
