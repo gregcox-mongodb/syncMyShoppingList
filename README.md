@@ -144,7 +144,6 @@ exports = async function setUserList(listName) {
   const users = cluster.db("shoppingList").collection("users");
   return await users.updateOne({
     _partition: "ShoppingListApp",
-    //user_id: context.user.id
     user_id:context.user.id
   },{$set:{list:listName}});
    return {uId: context.user.id};
