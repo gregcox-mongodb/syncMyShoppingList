@@ -21,7 +21,7 @@ Realm Demo App Install Guide:
     - Add collection: users
     - Click Add Collection (leave the other defaults)
 8. Add Schema:
-{
+{ 
   "title": "User",
   "required": [
     "_id",
