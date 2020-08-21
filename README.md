@@ -166,4 +166,4 @@ Function: createNewUser
 
 17. Review and Deploy
 
-18. Set the REALM App ID in Xcode
+18. Set the REALM App ID in Xcode (where // DEMO_COMMENT_2 is located in SceneDelegate.swift)
